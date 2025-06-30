@@ -1,27 +1,48 @@
-# PhoneNumberInputWorkspace
+# International Phone Number Input Component for Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.19.
+![Angular](https://img.shields.io/badge/Angular-18+-red.svg)
+![npm](https://img.shields.io/npm/v/@lakmaldulanga/international-phone-number-lm)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-## Development server
+A customizable international phone number input component for Angular applications with country flags and validation.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Component Preview](https://via.placeholder.com/300x100?text=Phone+Input+Preview)
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- 🌍 Country code selection with flags
+- 🔍 Searchable country dropdown
+- ✅ Phone number validation
+- 📱 Mobile-friendly responsive design
+- 🎨 Customizable styles
+- 🔄 Two-way data binding with `ngModel`
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install @lakmaldulanga/international-phone-number-lm
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Usage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+import { InternationalPhoneNumberLMModule } from '@lakmaldulanga/international-phone-number-lm';
 
-## Further help
+@NgModule({
+  imports: [
+    // ... other imports
+    InternationalPhoneNumberLMModule
+  ]
+})
+export class AppModule { }
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Use in your templates
+
+<lib-intl-phone-input
+  [(ngModel)]="phoneNumber"
+  [defaultCountry]="'US'"
+  [placeholder]="'Enter phone number'"
+  [disabled]="false"
+  (ngModelChange)="onPhoneChange($event)">
+</lib-intl-phone-input>
