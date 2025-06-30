@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap');
+
+.country-flag {
+  font-family: 'Noto Color Emoji', 'Segoe UI Emoji', sans-serif;
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+.phone-input-container {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  width: 300px;
+}
+
+.phone-input-container.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.country-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f5f5f5;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+}
+
+.country-flag {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.dropdown-arrow {
+  margin-left: auto;
+  font-size: 10px;
+  color: #666;
+}
+
+.country-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 0 0 4px 4px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.country-search {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+.country-search input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.country-list {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.country-item:hover {
+  background-color: #f5f5f5;
+}
+
+.country-name {
+  flex: 1;
+  margin-left: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.country-dial-code {
+  color: #666;
+  margin-left: 8px;
+}
+
+.no-results {
+  padding: 12px;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.phone-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+.validation-error {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 4px;
+}

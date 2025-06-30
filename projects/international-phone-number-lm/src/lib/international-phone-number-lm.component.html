@@ -1,0 +1,38 @@
+<div class="phone-input-container" [class.disabled]="disabled">
+  <div class="country-selector" (click)="!disabled && (showDropdown = !showDropdown)">
+    <span class="country-flag">{{ getSelectedCountry()?.flag }}</span>
+    <span class="country-code">{{ getSelectedCountry()?.dialCode }}</span>
+    <span class="dropdown-arrow">▼</span>
+    
+    <div class="country-dropdown" *ngIf="showDropdown" (click)="$event.stopPropagation()">
+      <div class="country-search">
+        <input type="text" [(ngModel)]="searchQuery" 
+               placeholder="Search countries..."
+               (click)="$event.stopPropagation()">
+      </div>
+      <div class="country-list">
+        <div *ngFor="let country of filteredCountries" 
+             (click)="selectCountry(country)"
+             class="country-item">
+          <span class="country-flag">{{ country.flag }}</span>
+          <span class="country-name">{{ country.name }}</span>
+          <span class="country-dial-code">{{ country.dialCode }}</span>
+        </div>
+        <div class="no-results" *ngIf="filteredCountries.length === 0">
+          No countries found
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <input type="text"
+         [(ngModel)]="phoneNumber"
+         (ngModelChange)="onPhoneNumberChange()"
+         [placeholder]="placeholder"
+         [disabled]="disabled"
+         class="phone-input">
+  
+  <div class="validation-error" *ngIf="phoneNumber && !validatePhoneNumber()">
+    Invalid phone number format
+  </div>
+</div>
